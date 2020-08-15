@@ -10,6 +10,9 @@
        html, body {
          height: 100%;
        }
+
+
+       
     </style>
   </head>
   <body> 
@@ -23,8 +26,22 @@ function initMap() {
   // The location of the centre of the world (atlantic ocean)
   var centre = {lat: 48, lng: -8};
   // The centered map at a defined zoom to see the whole world
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 2.5, center: centre});
+  var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2.5, 
+        center: centre,
+        styles: [
+          {
+            featureType: 'all',
+            elementType: 'geometry.stroke',
+            stylers: [{ visibility: "off" }]
+          },
+          {
+            featureType: 'all',
+            elementType: 'labels',
+            stylers: [{ visibility: "off" }]
+          }
+        ]
+        });
   var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
         //'https://imgs.xkcd.com/comics/';
@@ -36,21 +53,9 @@ function initMap() {
     //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
     xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
   };
-<<<<<<< HEAD
-  // The marker, positioned at Uluru
-  var egypt = {lat: 30, lng: 31};
 
-  var marker = new google.maps.Marker({
-    position: egypt,
-    icon: icons.library, 
-    map: map
-    });
-
-  marker.addListener('click', function() {
-=======
-  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.parking.icon, map: map}),"<p> EGYPT.</p>");
+  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.library, map: map}),"<p> EGYPT.</p>");
   egypt.marker.addListener('click', function() {
->>>>>>> d7fcef825d983941e5b63365d007180099c1ec5f
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
     myWindow.document.write(egypt.window);
   });
