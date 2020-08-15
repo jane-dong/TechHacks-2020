@@ -4,12 +4,16 @@
     <style>
        /* Set the size of the div element that contains the map */
       #map {
-        height: 600px;  /* The height is 600 pixels */
+        height: 100%;  /* The height is 100% */
         width: 100%;  /* The width is the width of the web page */
+       }
+       html, body {
+         height: 100%;
        }
     </style>
   </head>
-  <body>
+  <body> 
+    
     <h3>Ancient Civilization Explorer</h3>
     <!--The div element for the map -->
     <div id="map"></div>
@@ -21,23 +25,30 @@ function initMap() {
   // The centered map at a defined zoom to see the whole world
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 2.5, center: centre});
-  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31}, map: map}),"<p> EGYPT.</p>");
+  var iconBase =
+        'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+        //'https://imgs.xkcd.com/comics/';
+
+  var icons = {
+    parking: {
+      icon: iconBase + 'parking_lot_maps.png'
+    },
+    library: {
+      icon: iconBase + 'library_maps.png'
+    },
+    info: {
+      icon: iconBase + 'info-i_maps.png'
+    },
+    //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
+    xkcd:{
+      icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
+    }
+  };
+  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.parking.icon, map: map}),"<p> EGYPT.</p>");
   egypt.marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
     myWindow.document.write(window);
   });
-
- /*
-  // The coordinate for egypt
-  var egypt = {lat: 30, lng: 31};
-  // The marker, postioned at egypt
-  var marker = new google.maps.Marker({position: egypt, map: map});
-  //click functionality, a popup window with the described parameters
-  marker.addListener('click', function() {
-    var myWindow = window.open("", "MsgWindow", "width=400,height=400");
-    myWindow.document.write("<p> EGYPT.</p>");
-  });
-  */
 }
 
 function Civilization(marker, window){
