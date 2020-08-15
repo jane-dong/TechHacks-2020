@@ -25,11 +25,35 @@ function initMap() {
   // The map, centered at Uluru, at a defined zoom to see the whole world
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 2.5, center: centre});
-  // The coordinate for egypt
+
+  var iconBase =
+        'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+        //'https://imgs.xkcd.com/comics/';
+
+  var icons = {
+    parking: {
+      icon: iconBase + 'parking_lot_maps.png'
+    },
+    library: {
+      icon: iconBase + 'library_maps.png'
+    },
+    info: {
+      icon: iconBase + 'info-i_maps.png'
+    },
+    //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
+    xkcd:{
+      icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
+    }
+  };
+  // The marker, positioned at Uluru
   var egypt = {lat: 30, lng: 31};
-  // The marker, postioned at egypt
-  var marker = new google.maps.Marker({position: egypt, map: map});
-  //click functionality, a popup window with the described parameters
+
+  var marker = new google.maps.Marker({
+    position: egypt,
+    icon: icons['info'].icon, 
+    map: map
+    });
+
   marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
     myWindow.document.write("<p> EGYPT.</p>");
