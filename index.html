@@ -9,71 +9,70 @@
        }
        html, body {
          height: 100%;
-       }
-
-
-       
+       }  
     </style>
   </head>
   <body> 
-    
     <h3>Ancient Civilization Explorer</h3>
     <!--The div element for the map -->
     <div id="map"></div>
     <script>
-// Initialize and add the map
-function initMap() {
-  // The location of the centre of the world (atlantic ocean)
-  var centre = {lat: 48, lng: -8};
-  // The centered map at a defined zoom to see the whole world
-  var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2.5, 
-        center: centre,
-        styles: [
-          {
-            featureType: 'all',
-            elementType: 'geometry.stroke',
-            stylers: [{ visibility: "off" }]
-          },
-          {
-            featureType: 'all',
-            elementType: 'labels',
-            stylers: [{ visibility: "off" }]
-          }
-        ]
+      // Initialize and add the map
+      function initMap() {
+        // The location of the centre of the world (atlantic ocean)
+        var centre = {lat: 48, lng: -8};
+        // The centered map at a defined zoom to see the whole world
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2.5, 
+          center: centre,
+          styles: [
+            {
+              featureType: 'all',
+              elementType: 'geometry.stroke',
+              stylers: [{ visibility: "off" }]
+            },
+            {
+              featureType: 'all',
+              elementType: 'labels',
+              stylers: [{ visibility: "off" }]
+            }
+          ]
         });
-  var iconBase =
-        'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
-        //'https://imgs.xkcd.com/comics/';
+        var iconBase =
+          'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+          //'https://imgs.xkcd.com/comics/';
 
-  var icons = {
-    parking: iconBase + 'parking_lot_maps.png',
-    library: iconBase + 'library_maps.png',
-    icon: iconBase + 'info-i_maps.png', 
-    //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
-    xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
-  };
+        var icons = {
+          parking: iconBase + 'parking_lot_maps.png',
+          library: iconBase + 'library_maps.png',
+          icon: iconBase + 'info-i_maps.png', 
+          //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
+          xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
+        };
 
-  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.library, map: map}),"<p> EGYPT.</p>");
-  egypt.marker.addListener('click', function() {
-    var myWindow = window.open("", "MsgWindow", "width=400,height=400");
-    myWindow.document.write(egypt.window);
-  });
-}
+        // Constructor: new Civilization (new marker, "title");
+        var egypt = new Civilization(
+          new google.maps.Marker({position: {lat: 30, lng: 31}, icon: icons.library, map: map}),
+          "Welcome to Egypt!");
+        egypt.marker.addListener('click', function() {
+          var egyptWindow = window.open("popup_egypt.html", "MsgWindow", "width=400,height=400");
+        });
+      }
 
-function Civilization(marker, window){
-  this.marker = marker;
-  this.window = window;
-}
-
+      function Civilization(marker, window){
+        this.marker = marker;
+        this.window = window;
+      }
     </script>
+
+
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
     <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLzpp13nW_tQEgt6xVUwyKrmJ4sbkIkeM&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLzpp13nW_tQEgt6xVUwyKrmJ4sbkIkeM&callback=initMap">
     </script>
   </body>
 </html>
