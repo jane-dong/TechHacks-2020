@@ -20,12 +20,11 @@
     <script>
 // Initialize and add the map
 function initMap() {
-  // The location of the centre of the world
+  // The location of the centre of the world (atlantic ocean)
   var centre = {lat: 48, lng: -8};
-  // The map, centered at Uluru, at a defined zoom to see the whole world
+  // The centered map at a defined zoom to see the whole world
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 2.5, center: centre});
-
   var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
         //'https://imgs.xkcd.com/comics/';
@@ -37,6 +36,7 @@ function initMap() {
     //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
     xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
   };
+<<<<<<< HEAD
   // The marker, positioned at Uluru
   var egypt = {lat: 30, lng: 31};
 
@@ -47,10 +47,20 @@ function initMap() {
     });
 
   marker.addListener('click', function() {
+=======
+  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.parking.icon, map: map}),"<p> EGYPT.</p>");
+  egypt.marker.addListener('click', function() {
+>>>>>>> d7fcef825d983941e5b63365d007180099c1ec5f
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
-    myWindow.document.write("<p> EGYPT.</p>");
+    myWindow.document.write(egypt.window);
   });
 }
+
+function Civilization(marker, window){
+  this.marker = marker;
+  this.window = window;
+}
+
     </script>
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
