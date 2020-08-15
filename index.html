@@ -42,9 +42,19 @@ function initMap() {
     //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
     xkcd:{
       icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
+    },
+    pyramid: {
+      icon:'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
     }
   };
-  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.parking.icon, map: map}),"<p> EGYPT.</p>");
+
+  var image = {
+  url: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
+  //size: new google.maps.Size(100, 100),
+  //origin: new google.maps.Point(0, -300),
+  scaledSize: new google.maps.Size(25, 25)
+};
+  var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: image, map: map}),"<p> EGYPT.</p>");
   egypt.marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
     myWindow.document.write(egypt.window);
