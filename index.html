@@ -47,7 +47,7 @@ function initMap() {
   var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: icons.parking.icon, map: map}),"<p> EGYPT.</p>");
   egypt.marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
-    myWindow.document.write(window);
+    myWindow.document.write(egypt.window);
   });
 }
 
