@@ -20,7 +20,7 @@ function initMap() {
   var centre = {lat: 48, lng: -8};
   // The map, centered at Uluru, at a defined zoom to see the whole world
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 2.5, center: uluru});
+      document.getElementById('map'), {zoom: 2.5, center: centre});
 
   var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
@@ -41,12 +41,13 @@ function initMap() {
       icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
     }
   };
+  
   // The marker, positioned at Uluru
   var egypt = {lat: 30, lng: 31};
 
   var marker = new google.maps.Marker({
     position: egypt,
-    //icon: icons['info'].icon, 
+    icon: icons['info'].icon, 
     map: map
     });
 
