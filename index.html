@@ -21,9 +21,34 @@ function initMap() {
   // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 2.5, center: uluru});
+
+  var iconBase =
+        'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
+        //'https://imgs.xkcd.com/comics/';
+
+  var icons = {
+    parking: {
+      icon: iconBase + 'parking_lot_maps.png'
+    },
+    library: {
+      icon: iconBase + 'library_maps.png'
+    },
+    info: {
+      icon: iconBase + 'info-i_maps.png'
+    },
+    //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
+    xkcd:{
+      icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
+    }
+  };
   // The marker, positioned at Uluru
   var egypt = {lat: 30, lng: 31};
-  var marker = new google.maps.Marker({position: egypt, map: map});
+
+  var marker = new google.maps.Marker({
+    position: egypt,
+    icon: icons['info'].icon, 
+    map: map
+    });
 
   marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
