@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>KML Click Capture Sample</title>
     <style>
-      html, body {
-        height: 370px;
-        padding: 0;
-        margin: 0;
-        }
+       /* Set the size of the div element that contains the map */
       #map {
-       height: 360px;
-       width: 100%;
-       overflow: hidden;
-       float: left;
-       border: thin solid #333;
-       }
-      #capture {
-       height: 360px;
-       width: 480px;
-       overflow: hidden;
-       float: left;
-       background-color: #ECECFB;
-       border: thin solid #333;
-       border-left: none;
+        height: 600px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
        }
     </style>
   </head>
   <body>
+    <h3>Ancient Civilization Explorer</h3>
+    <!--The div element for the map -->
     <div id="map"></div>
-    <div id="capture"></div>
     <script>
-      var map;
-      var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 48, lng: -8};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 2.5, center: uluru});
+  // The marker, positioned at Uluru
+  var egypt = {lat: 30, lng: 31};
+  var marker = new google.maps.Marker({position: egypt, map: map});
 
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, 146.823688),
-          zoom: 18,
-          mapTypeId: 'terrain'
-        });
-
-        var kmlLayer = new google.maps.KmlLayer(src, {
-          suppressInfoWindows: true,
-          preserveViewport: false,
-          map: map
-        });
-        kmlLayer.addListener('click', function(event) {
-          var content = event.featureData.infoWindowHtml;
-          var testimonial = document.getElementById('capture');
-          testimonial.innerHTML = content;
-        });
-      }
+  marker.addListener('click', function() {
+    var myWindow = window.open("", "MsgWindow", "width=400,height=400");
+    myWindow.document.write("<p> EGYPT.</p>");
+  });
+}
     </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
     <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLzpp13nW_tQEgt6xVUwyKrmJ4sbkIkeM
-    &callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLzpp13nW_tQEgt6xVUwyKrmJ4sbkIkeM&callback=initMap">
     </script>
   </body>
 </html>
