@@ -16,15 +16,16 @@
     <script>
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 48, lng: -8};
-  // The map, centered at Uluru
+  // The location of the centre of the world
+  var centre = {lat: 48, lng: -8};
+  // The map, centered at Uluru, at a defined zoom to see the whole world
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 2.5, center: uluru});
-  // The marker, positioned at Uluru
+      document.getElementById('map'), {zoom: 2.5, center: centre});
+  // The coordinate for egypt
   var egypt = {lat: 30, lng: 31};
+  // The marker, postioned at egypt
   var marker = new google.maps.Marker({position: egypt, map: map});
-
+  //click functionality, a popup window with the described parameters
   marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
     myWindow.document.write("<p> EGYPT.</p>");
