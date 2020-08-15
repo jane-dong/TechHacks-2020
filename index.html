@@ -10,6 +10,7 @@
        html, body {
          height: 100%;
        }
+       
     </style>
   </head>
   <body> 
@@ -23,22 +24,31 @@ function initMap() {
   // The location of the centre of the world (atlantic ocean)
   var centre = {lat: 48, lng: -8};
   // The centered map at a defined zoom to see the whole world
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 2.5, center: centre});
+  var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2.5, 
+        center: centre,
+        styles: [
+          {
+            featureType: 'all',
+            elementType: 'geometry.stroke',
+            stylers: [{ visibility: "off" }]
+          },
+          {
+            featureType: 'all',
+            elementType: 'labels',
+            stylers: [{ visibility: "off" }]
+          }
+        ]
+        });
+
   var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
         //'https://imgs.xkcd.com/comics/';
 
   var icons = {
-    parking: {
-      icon: iconBase + 'parking_lot_maps.png'
-    },
-    library: {
-      icon: iconBase + 'library_maps.png'
-    },
-    info: {
-      icon: iconBase + 'info-i_maps.png'
-    },
+    parking: iconBase + 'parking_lot_maps.png',
+    library: iconBase + 'library_maps.png',
+    icon: iconBase + 'info-i_maps.png', 
     //this part isn't really used but if you want to have fun with large icons, or just read a fun comic here it is
     xkcd:{
       icon: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png'
@@ -49,11 +59,10 @@ function initMap() {
   };
 
   var image = {
-  url: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
-  //size: new google.maps.Size(100, 100),
-  //origin: new google.maps.Point(0, -300),
+  url: icons.pyramid.icon,
   scaledSize: new google.maps.Size(25, 25)
 };
+
   var egypt = new Civilization(new google.maps.Marker({position: {lat: 30, lng: 31},icon: image, map: map}),"<p> EGYPT.</p>");
   egypt.marker.addListener('click', function() {
     var myWindow = window.open("", "MsgWindow", "width=400,height=400");
