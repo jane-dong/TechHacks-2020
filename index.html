@@ -123,6 +123,11 @@
         scaledSize: new google.maps.Size(40, 40)
         };
 
+        var andeanScaled = {
+        url: icons.andean,
+        scaledSize: new google.maps.Size(40, 40)
+        };
+
         // Define the LatLng coordinates for the egypt's path.
         var triangleCoords = [
           {lat: 31.5751772, lng: 25.1200015},
@@ -398,7 +403,7 @@
         });
 
         var andean = new Civilization(
-          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: icons.andean, map: map}),
+          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: andeanScaled, map: map}),
           "");
 
         andean.marker.addListener('click', function() {
