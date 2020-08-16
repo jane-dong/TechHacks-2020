@@ -100,7 +100,8 @@
           pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
           mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521',
           greatWall: 'https://cdn2.iconfinder.com/data/icons/landmark3-5/64/Great-wall-china-ancient-landmark-512.png',
-          mesopotamia: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_320,f_auto/MA_00819512_icon_v5dxrx.jpg'
+          mesopotamia: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_320,f_auto/MA_00819512_icon_v5dxrx.jpg',
+          andean: 'https://vignette.wikia.nocookie.net/civilization/images/7/77/Incan_%28Civ5%29.png/revision/latest/top-crop/width/360/height/450?cb=20190831192805'
         };
 
         var pyramidScaled = {
@@ -397,7 +398,7 @@
         });
 
         var andean = new Civilization(
-          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: icons.icon, map: map}),
+          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: icons.andean, map: map}),
           "");
 
         andean.marker.addListener('click', function() {
