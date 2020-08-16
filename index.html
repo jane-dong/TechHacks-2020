@@ -99,7 +99,8 @@
           xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
           pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
           mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521',
-          greatWall: 'https://cdn2.iconfinder.com/data/icons/landmark3-5/64/Great-wall-china-ancient-landmark-512.png'
+          greatWall: 'https://cdn2.iconfinder.com/data/icons/landmark3-5/64/Great-wall-china-ancient-landmark-512.png',
+          mesopotamia: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_320,f_auto/MA_00819512_icon_v5dxrx.jpg'
         };
 
         var pyramidScaled = {
@@ -375,7 +376,7 @@
         });
 
         var mesopotamia = new Civilization(
-          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: icons.icon, map: map}),
+          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: icons.mesopotamia, map: map}),
           "");
 
         mesopotamia.marker.addListener('click', function() {
