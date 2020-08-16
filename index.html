@@ -117,6 +117,11 @@
         scaledSize: new google.maps.Size(40, 40)
         };
 
+        var mesopotamiaScaled = {
+        url: icons.mesopotamia,
+        scaledSize: new google.maps.Size(40, 40)
+        };
+
         // Define the LatLng coordinates for the egypt's path.
         var triangleCoords = [
           {lat: 31.5751772, lng: 25.1200015},
@@ -376,7 +381,7 @@
         });
 
         var mesopotamia = new Civilization(
-          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: icons.mesopotamia, map: map}),
+          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: mesopotamiaScaled, map: map}),
           "");
 
         mesopotamia.marker.addListener('click', function() {
