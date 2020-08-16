@@ -50,7 +50,8 @@ body {font-family: "Lato", sans-serif}
 By 1800 BCE, drought and climate change had dispersed the larger population centres of the Indus Valley people. Later, a group of nomadic tribes now known as the Indo-Aryan people made their homes in the valley and slowly turned to agriculture; their cultures mingled with the remnants of the Indus Valley culture, kindling the Vedic age of ancient India (ca. 1500 - 500 BCE). This age marked the establishment of highly stratified social classes that would remain influential for centuries more. Other developments that arose during the Vedic period include a religious antecedent to Hinduism, refined pottery arts, and advancements in trades and agriculture.
 <p></p><br>
 
-  
+<button onclick="goToWiki()">More information :)</button><br><br>
+
 <!-- End Page Content -->
 </div>
 
@@ -70,7 +71,15 @@ function carousel() {
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, 4000);    
 }
-
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Ancient_india");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
 
 </script>
 
