@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>W3.CSS Template</title>
+<title>Ancient Mesopotamia</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -52,6 +52,7 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-justify">Ancient Mesopotamia relied on the Tigris and Euphrates river for agriculture and used it to their advantage for irrigation techniques. The region was mainly occupied by numerous cities with the babylonians and the sumerians. Known by many as the beginning of human civilization many inventions including the concept of time, math, the wheel, sailboats, maps and writing. Their literature consists of Akkadian Literature written in the Akkadian Language and were based on tales in Sumerian Literature. It is located in the Middle East spanning what is known today as Iraq, Kuwait, Turkey and Syria. 
 <p></p><br>
 
+<button onclick="goToWiki()">More information :)</button><br><br>
   
 <!-- End Page Content -->
 </div>
@@ -72,7 +73,15 @@ function carousel() {
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, 4000);    
 }
-
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Mesopotamia");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
 
 </script>
 
