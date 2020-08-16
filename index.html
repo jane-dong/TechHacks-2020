@@ -72,8 +72,8 @@
         var centre = {lat: 10, lng: 8};
         // The centered map at a defined zoom to see the whole world
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3, 
-          minZoom: 3,
+          zoom: 2, 
+          minZoom: 2,
           center: centre,
           styles: [
             {
@@ -114,6 +114,11 @@
         var greatWallScaled = {
         url: icons.greatWall,
         scaledSize: new google.maps.Size(40, 40)
+        };
+
+        var xkcdScaled = {
+        url: icons.xkcd,
+        scaledSize: new google.maps.Size(200, 250)
         };
 
         // Define the LatLng coordinates for the egypt's path.
@@ -397,6 +402,15 @@
         andean.marker.addListener('click', function() {
           window.open("popup_nc.html", "MsgWindow", "width = 400", "height = 400");
         });
+
+        var xkcd = new Civilization(
+          new google.maps.Marker({position: {lat: -83, lng: -0}, icon: xkcdScaled, map: map}),
+          "");
+        /*
+        andean.marker.addListener('click', function() {
+          window.open("https://xkcd.com/2086/", "MsgWindow", "width = 400", "height = 400");
+        });
+        */
       }
 
       function Civilization(marker, window){
