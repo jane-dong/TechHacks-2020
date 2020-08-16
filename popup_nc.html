@@ -18,7 +18,7 @@ body {font-family: "Lato", sans-serif}
   <!-- Automatic Slideshow Images -->
 
   <div class="mySlides w3-display-container w3-center">
-    <img src="https://www.maa.org/sites/default/files/images/cms_upload/illustration_616911.jpg" style="width:100%">
+    <img src="https://www.maa.org/sites/default/files/images/cms_upload/illustration_616911.jpg" style="width:60%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>Quipu: knotted tally cords used to convey information</h3>
     </div>
@@ -39,7 +39,8 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-justify">    The Andean civilizations were located in a unique region that posed many environmental challenges. They did not have a written language, but instead used a series of knotted strings known as quipu to convey information. Transportation was mostly done by foot and sometimes llamas. Agriculture was challenging in the region since the soil was infertile and the climate was unpredictable, so creative agricultural techniques were devised to offset the uncertainty of crops growing. For example, farmers would grow their crops at different elevations and moisture levels. The region was located in what is now Peru.
 <p></p><br>
 
-  
+<button onclick="goToWiki()">More information :)</button><br><br>
+
 <!-- End Page Content -->
 </div>
 
@@ -60,7 +61,15 @@ function carousel() {
   setTimeout(carousel, 4000);    
 }
 
-
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Andean_civilizations");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
 </script>
 
 </body>

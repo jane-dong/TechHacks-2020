@@ -69,7 +69,7 @@
       // Initialize and add the map
       function initMap() {
         // The location of the centre of the world (atlantic ocean)
-        var centre = {lat: 10, lng: 8};
+        var centre = {lat: 20, lng: 8};
         // The centered map at a defined zoom to see the whole world
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2, 
@@ -99,7 +99,8 @@
           pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
           mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521',
           greatWall: 'https://cdn2.iconfinder.com/data/icons/landmark3-5/64/Great-wall-china-ancient-landmark-512.png',
-          mesopotamia: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_320,f_auto/MA_00819512_icon_v5dxrx.jpg'
+          mesopotamia: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_320,f_auto/MA_00819512_icon_v5dxrx.jpg',
+          andean: 'https://vignette.wikia.nocookie.net/civilization/images/7/77/Incan_%28Civ5%29.png/revision/latest/top-crop/width/360/height/450?cb=20190831192805'
         };
 
         var pyramidScaled = {
@@ -118,7 +119,17 @@
 
         var xkcdScaled = {
         url: icons.xkcd,
-        scaledSize: new google.maps.Size(200, 250)
+        scaledSize: new google.maps.Size(190, 250)
+        };
+
+        var mesopotamiaScaled = {
+        url: icons.mesopotamia,
+        scaledSize: new google.maps.Size(40, 40)
+        };
+
+        var andeanScaled = {
+        url: icons.andean,
+        scaledSize: new google.maps.Size(40, 40)
         };
 
         // Define the LatLng coordinates for the egypt's path.
@@ -380,7 +391,7 @@
         });
 
         var mesopotamia = new Civilization(
-          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: icons.mesopotamia, map: map}),
+          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: mesopotamiaScaled, map: map}),
           "");
 
         mesopotamia.marker.addListener('click', function() {
@@ -396,7 +407,7 @@
         });
 
         var andean = new Civilization(
-          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: icons.icon, map: map}),
+          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: andeanScaled, map: map}),
           "");
 
         andean.marker.addListener('click', function() {
@@ -404,7 +415,7 @@
         });
 
         var xkcd = new Civilization(
-          new google.maps.Marker({position: {lat: -83, lng: -0}, icon: xkcdScaled, map: map}),
+          new google.maps.Marker({position: {lat: -85, lng: -0}, icon: xkcdScaled, map: map}),
           "");
         /*
         andean.marker.addListener('click', function() {
