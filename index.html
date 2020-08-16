@@ -91,6 +91,14 @@
         india.marker.addListener('click', function() {
           window.open("popup_india.html", "MsgWindow", "width = 400", "height = 400");
         });
+
+        var mesopotamia = new Civilization(
+          new google.maps.Marker({position: {lat: 39, lng: 39}, icon: icons.icon, map: map}),
+          "");
+
+        mesopotamia.marker.addListener('click', function() {
+          window.open("popup_mesopotamia.html", "MsgWindow", "width = 400", "height = 400");
+        });
       }
 
       function Civilization(marker, window){
