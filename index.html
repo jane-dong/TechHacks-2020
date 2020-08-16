@@ -351,7 +351,7 @@
 
         // Constructor: new Civilization (new marker, "title");
         var egypt = new Civilization(
-          new google.maps.Marker({position: {lat: 30, lng: 31}, icon: pyramidScaled, map: map}),
+          new google.maps.Marker({position: {lat: 27, lng: 31}, icon: pyramidScaled, map: map}),
           "");
 
         egypt.marker.addListener('click', function() {
@@ -375,7 +375,7 @@
         });
 
         var mesopotamia = new Civilization(
-          new google.maps.Marker({position: {lat: 39, lng: 39}, icon: icons.icon, map: map}),
+          new google.maps.Marker({position: {lat: 33, lng: 39}, icon: icons.icon, map: map}),
           "");
 
         mesopotamia.marker.addListener('click', function() {
@@ -388,6 +388,14 @@
 
         mesopotamia.marker.addListener('click', function() {
           window.open("popup_china.html", "MsgWindow", "width = 400", "height = 400");
+        });
+
+        var andean = new Civilization(
+          new google.maps.Marker({position: {lat: -19, lng: -69}, icon: icons.icon, map: map}),
+          "");
+
+        andean.marker.addListener('click', function() {
+          window.open("popup_nc.html", "MsgWindow", "width = 400", "height = 400");
         });
       }
 
