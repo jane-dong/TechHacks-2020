@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.maa.org/sites/default/files/images/cms_upload/illustration_616911.jpg" style="width:60%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Quipu: knotted tally cords used to convey information</h3>
+    </div>
+  </div>
+
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.nhm.ac.uk/content/dam/nhmwww/discover/llama-poop-mites-inca-empire/llama-poop-inca-empire-full-width.jpg.thumb.1920.1920.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Llama: widely used as a meat and pack animal by Andean cultures</h3>
+    </div>
+  </div>
+
+
+  <!-- Text Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">ANDEAN CIVILIZATIONS</h2>
+    <p class="w3-opacity"><i>ca. 10,000 BCE – 200 BCE</i></p>
+    <p class="w3-justify">    The Andean civilizations were located in a unique region that posed many environmental challenges. They did not have a written language, but instead used a series of knotted strings known as quipu to convey information. Transportation was mostly done by foot and sometimes llamas. Agriculture was challenging in the region since the soil was infertile and the climate was unpredictable, so creative agricultural techniques were devised to offset the uncertainty of crops growing. For example, farmers would grow their crops at different elevations and moisture levels. The region was located in what is now Peru.
+<p></p><br>
+
+<button onclick="goToWiki()">More information :)</button><br><br>
+
+<!-- End Page Content -->
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Andean_civilizations");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
+</script>
+
+</body>
+</html>

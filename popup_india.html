@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://scx2.b-cdn.net/gfx/news/hires/2009/computersunl.jpg" style="width:80%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Indus Valley civilization script</h3>
+      <p><b>A piece of artwork dating from the Indus Valley Civilization, featuring the unknown script of the Indus language, called the Harappan language.</b></p>    
+    </div>
+  </div>
+
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Lothal_-_ancient_well.jpg/1280px-Lothal_-_ancient_well.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Water supply and sewage</h3>
+      <p><b>A well and drainage canals in the Indus Valley town of Lothal.</b></p>    
+    </div>
+  </div>
+
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.civilsdaily.com/wp-content/uploads/2017/01/image-result-for-northern-black-polished-ware-pott.jpeg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Pottery</h3>
+      <p><b>An example of Northern Black Polished Ware, a style of pottery that emerged towards the end of the Vedic age, 6th century BCE. Luxurious and made of fine material, this style was restricted to the upper classes. </b></p>   
+    </div>
+  </div>
+
+
+  <!-- Text Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">ANCIENT INDIA</h2>
+    <p class="w3-opacity"><i>ca. 3300 BCE</i></p>
+    <p class="w3-justify">    The Indian subcontinent was a fertile cradle of civilization, home to the Indus Valley Civilization that thrived between 2600 and 1900 BCE. This civilization developed advanced urban architecture, including baked brick houses and intricate water supply and sewage systems. However, much of their cultural beliefs and practices are lost to time, and modern scholars remain unable to decipher the Indus language.
+<br><br>
+By 1800 BCE, drought and climate change had dispersed the larger population centres of the Indus Valley people. Later, a group of nomadic tribes now known as the Indo-Aryan people made their homes in the valley and slowly turned to agriculture; their cultures mingled with the remnants of the Indus Valley culture, kindling the Vedic age of ancient India (ca. 1500 - 500 BCE). This age marked the establishment of highly stratified social classes that would remain influential for centuries more. Other developments that arose during the Vedic period include a religious antecedent to Hinduism, refined pottery arts, and advancements in trades and agriculture.
+<p></p><br>
+
+<button onclick="goToWiki()">More information :)</button><br><br>
+
+<!-- End Page Content -->
+</div>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Ancient_india");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
+
+</script>
+
+</body>
+</html>
