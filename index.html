@@ -26,6 +26,7 @@
         // The centered map at a defined zoom to see the whole world
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2.5, 
+          minZoom: 2,
           center: centre,
           styles: [
             {
@@ -59,11 +60,11 @@
 
         var pyramidScaled = {
         url: icons.pyramid,
-        scaledSize: new google.maps.Size(25, 25)
+        scaledSize: new google.maps.Size(40, 40)
         };
         var mayaPyramidScaled = {
         url: icons.mayaPyramid,
-        scaledSize: new google.maps.Size(25, 25)
+        scaledSize: new google.maps.Size(40, 40)
         };
 
 
