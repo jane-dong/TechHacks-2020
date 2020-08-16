@@ -38,6 +38,7 @@
         // The centered map at a defined zoom to see the whole world
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2.5, 
+          minZoom: 2,
           center: centre,
           styles: [
             {
@@ -65,10 +66,6 @@
           mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521'
         };
 
-        var iconBase =
-              'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
-              //'https://imgs.xkcd.com/comics/';
-
         var pyramidScaled = {
         url: icons.pyramid,
         scaledSize: new google.maps.Size(40, 40)
@@ -77,6 +74,74 @@
         url: icons.mayaPyramid,
         scaledSize: new google.maps.Size(40, 40)
         };
+
+        // Define the LatLng coordinates for the egypt's path.
+        var triangleCoords = [
+          {lat: 31.5751772, lng: 25.1200015},
+          {lat: 28.580766, lng: 26.0950378},
+          {lat: 26.887149, lng: 28.9127442},
+          {lat: 24.5435375, lng: 29.6463688},
+          {lat: 21.3452272, lng: 31.2780479},
+          {lat: 18.8089865, lng: 37.2928532},
+          {lat: 22.0212538, lng: 36.9164358},
+          {lat: 29.7990973, lng: 32.3709781},
+          {lat: 27.6887451, lng: 33.9822894},
+          {lat: 30.5907173, lng: 35.2174191},
+          {lat: 32.8267812, lng: 35.9061294},
+          {lat: 35.8764329, lng: 37.481738},
+          {lat: 35.4372694, lng: 35.603804},
+          {lat: 33.6170218, lng: 35.1382952},
+          {lat: 31.9384723, lng: 34.0884071},
+          {lat: 31.2415852, lng: 32.7626269},
+          {lat: 31.6509345, lng: 31.0899493},
+          {lat: 30.7598794, lng: 29.2419423},
+          {lat: 31.5751772, lng: 25.1200015}
+        ];
+
+        // Construct the polygon.
+        var egyptShape = new google.maps.Polygon({
+          paths: triangleCoords,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        egyptShape.setMap(map)
+
+        var mesoAmericaCoordinates = [
+        {lat: 27.214028, lng: -97.6916812},
+        {lat: 27.4482654, lng: -100.9436343},
+        {lat: 25.4813999, lng: -101.4709781},
+        {lat: 28.9970288, lng: -107.3596499},
+        {lat: 30.9761358, lng: -112.3694156},
+        {lat: 29.2273904, lng: -112.3694156},
+        {lat: 22.0229526, lng: -104.9866031},
+        {lat: 19.5581709, lng: -105.5139468},
+        {lat: 15.9596769, lng: -96.7248843},
+        {lat: 16.4660468, lng: -93.9123843},
+        {lat: 13.4948018, lng: -89.3420718},
+        {lat: 12.4670823, lng: -84.9475406},
+        {lat: 16.5503145, lng: -89.3420718},
+        {lat: 21.2058567, lng: -87.2326968},
+        {lat: 20.8777374, lng: -91.4514468},
+        {lat: 18.7267347, lng: -91.7769365},
+        {lat: 18.6434765, lng: -95.3804521},
+        {lat: 20.9176675, lng: -97.4019365},
+        {lat: 23.6418475, lng: -97.8413896},
+        {lat: 27.214028, lng: -97.6916812}
+        ]
+
+        // Construct the polygon.
+        var mesoAmerica = new google.maps.Polygon({
+          paths: mesoAmericaCoordinates,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        mesoAmerica.setMap(map)
 
 
         // Constructor: new Civilization (new marker, "title");
