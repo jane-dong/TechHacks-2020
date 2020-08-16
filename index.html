@@ -52,7 +52,8 @@
           icon: iconBase + 'info-i_maps.png', 
           xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
           pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
-          mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521'
+          mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521',
+          greatWall: 'https://cdn2.iconfinder.com/data/icons/landmark3-5/64/Great-wall-china-ancient-landmark-512.png'
         };
 
         var pyramidScaled = {
@@ -61,6 +62,10 @@
         };
         var mayaPyramidScaled = {
         url: icons.mayaPyramid,
+        scaledSize: new google.maps.Size(40, 40)
+        };
+        var greatWallScaled = {
+        url: icons.greatWall,
         scaledSize: new google.maps.Size(40, 40)
         };
 
@@ -90,11 +95,11 @@
         // Construct the polygon.
         var egyptShape = new google.maps.Polygon({
           paths: triangleCoords,
-          strokeColor: '#FF0000',
+          strokeColor: '#30244d',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
         });
         egyptShape.setMap(map)
 
@@ -119,16 +124,16 @@
         {lat: 20.9176675, lng: -97.4019365},
         {lat: 23.6418475, lng: -97.8413896},
         {lat: 27.214028, lng: -97.6916812}
-        ]
+        ];
 
         // Construct the polygon.
         var mesoAmerica = new google.maps.Polygon({
           paths: mesoAmericaCoordinates,
-          strokeColor: '#FF0000',
+          strokeColor: '#30244d',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
         });
         mesoAmerica.setMap(map)
 
@@ -187,22 +192,119 @@
 {lat: 20.9803777, lng: 72.5246198},
 {lat: 19.5917864, lng: 72.4731473},
 
-        ]
+        ];
         
         // Construct the polygon.
         var indiaShape = new google.maps.Polygon({
           paths: indiaCoordinates,
-          strokeColor: '#FF0000',
+          strokeColor: '#30244d',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
         });
         indiaShape.setMap(map)
 
+        var chinaCoordinates = [
+        {lat: 48.6554912, lng: 86.8353362},
+{lat: 43.4139143, lng: 79.8040862},
+{lat: 39.4625848, lng: 73.6517425},
+{lat: 30.7051064, lng: 78.5736175},
+{lat: 26.2255406, lng: 91.2298675},
+{lat: 22.5441269, lng: 106.347055},
+{lat: 22.3816828, lng: 112.3236175},
+{lat: 23.0303093, lng: 117.2454925},
+{lat: 29.335361, lng: 122.51893},
+{lat: 34.6974635, lng: 119.70643},
+{lat: 37.2575364, lng: 122.3431487},
+{lat: 38.0922961, lng: 118.8275237},
+{lat: 40.8064166, lng: 121.4642425},
+{lat: 38.6435701, lng: 126.3861175},
+{lat: 34.6974635, lng: 126.73768},
+{lat: 37.1174983, lng: 129.9017425},
+{lat: 40.406059, lng: 127.0892425},
+{lat: 42.1235774, lng: 131.4837737},
+{lat: 45.1751519, lng: 131.3079925},
+{lat: 53.1936006, lng: 123.7493987},
+{lat: 49.0026437, lng: 115.8392425},
+{lat: 46.6427309, lng: 118.6517425},
+{lat: 41.4683418, lng: 105.64393},
+{lat: 48.6554912, lng: 86.8353362}
+
+        ];
+        // Construct the polygon.
+        var chinaShape = new google.maps.Polygon({
+          paths: chinaCoordinates,
+          strokeColor: '#30244d',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
+        });
+        chinaShape.setMap(map)
+
+        var andeanCoordinates = [
+        {lat: -6.0191727, lng: -80.7334526},
+{lat: -10.0217479, lng: -78.0967339},
+{lat: -14.3164336, lng: -75.8115776},
+{lat: -18.5305444, lng: -70.0107964},
+{lat: -29.4289676, lng: -71.5928276},
+{lat: -33.3295097, lng: -71.5928276},
+{lat: -38.1767926, lng: -73.3506401},
+{lat: -41.2851463, lng: -73.7022026},
+{lat: -18.1968856, lng: -64.2100151},
+{lat: -0.9325776, lng: -80.3818901},
+{lat: -6.0191727, lng: -80.7334526},
+
+        ];
+        var andeanShape = new google.maps.Polygon({
+          paths: andeanCoordinates,
+          strokeColor: '#30244d',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
+        });
+        andeanShape.setMap(map)
+
+        var mesopotamiaCoordinates = [
+        {lat: 36.4271204, lng: 35.69985},
+{lat: 34.6209076, lng: 36.0231782},
+{lat: 33.3455753, lng: 34.9684907},
+{lat: 32.1257502, lng: 34.8366547},
+{lat: 31.3033301, lng: 34.0895844},
+{lat: 31.4534028, lng: 36.5505219},
+{lat: 32.311643, lng: 39.0993501},
+{lat: 31.4534028, lng: 41.7360688},
+{lat: 30.1735224, lng: 43.1423188},
+{lat: 29.1424629, lng: 45.9987641},
+{lat: 29.1616523, lng: 48.1301118},
+{lat: 29.5916334, lng: 48.1174484},
+{lat: 30.2391604, lng: 48.9963546},
+{lat: 30.2391604, lng: 50.1828781},
+{lat: 29.1968666, lng: 50.9488734},
+{lat: 31.0214968, lng: 50.5094203},
+{lat: 32.8856801, lng: 48.5318812},
+{lat: 35.6453372, lng: 45.9830531},
+{lat: 37.1660984, lng: 43.1266078},
+{lat: 37.060967, lng: 39.5670375},
+{lat: 36.4271204, lng: 35.69985}
+        ];
+
+        var mesopotamiaShape = new google.maps.Polygon({
+          paths: mesopotamiaCoordinates,
+          strokeColor: '#30244d',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#7e66b6',
+          fillOpacity: 0.6
+        });
+        mesopotamiaShape.setMap(map)
+
+
         // Constructor: new Civilization (new marker, "title");
         var egypt = new Civilization(
-          new google.maps.Marker({position: {lat: 30, lng: 31}, icon: pyramidScaled, map: map}),
+          new google.maps.Marker({position: {lat: 28, lng: 31}, icon: pyramidScaled, map: map}),
           "");
 
         egypt.marker.addListener('click', function() {
@@ -232,7 +334,16 @@
         mesopotamia.marker.addListener('click', function() {
           window.open("popup_mesopotamia.html", "MsgWindow", "width = 400", "height = 400");
         });
+        
+        var china = new Civilization(
+          new google.maps.Marker({position: {lat: 37, lng: 113}, icon: greatWallScaled, map: map}),
+          "");
+
+        mesopotamia.marker.addListener('click', function() {
+          window.open("popup_china.html", "MsgWindow", "width = 400", "height = 400");
+        });
       }
+      
 
       function Civilization(marker, window){
         this.marker = marker;
