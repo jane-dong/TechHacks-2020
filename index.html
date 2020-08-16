@@ -4,19 +4,31 @@
     <style>
        /* Set the size of the div element that contains the map */
       #map {
-        height: 90%;  /* The height is 100% */
+        height: 90%;  /* The height is 90% */
         width: 100%;  /* The width is the width of the web page */
+        position: fixed;
        }
        html, body {
          height: 100%;
+       }
+       #title{
+        height: 90%;  /* The height is 90% */
+        width: 100%;  /* The width is the width of the web page */
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:5;
        }
        
     </style>
   </head>
   <body> 
-    <h3>Ancient Civilization Explorer</h3>
+  
     <!--The div element for the map -->
     <div id="map"></div>
+    <div id = "title">
+      <h3>Ancient Civilization Explorer</h3>
+      </div>
     <script>
       
       // Initialize and add the map
@@ -49,13 +61,8 @@
           library: iconBase + 'library_maps.png',
           icon: iconBase + 'info-i_maps.png', 
           xkcd: 'https://imgs.xkcd.com/comics/covid_risk_comfort_zone.png',
-<<<<<<< HEAD
-          temple: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSKpC05MOfKj8er9CkCz8Rx8mzL_H57kYiJfw&usqp=CAU',
-          pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png'
-=======
           pyramid: 'https://webcomicms.net/sites/default/files/clipart/173722/pyramid-png-transparent-images-173722-3191168.png',
           mayaPyramid: 'https://officialpsds.com/imageview/79/1x/791xq3_large.png?1521316521'
->>>>>>> f04a796e6e17fac78d6e723d133ff343504d89a6
         };
 
         var iconBase =
@@ -63,12 +70,12 @@
               //'https://imgs.xkcd.com/comics/';
 
         var pyramidScaled = {
-        url: icons.temple,
-        scaledSize: new google.maps.Size(25, 25)
+        url: icons.pyramid,
+        scaledSize: new google.maps.Size(40, 40)
         };
         var mayaPyramidScaled = {
         url: icons.mayaPyramid,
-        scaledSize: new google.maps.Size(25, 25)
+        scaledSize: new google.maps.Size(40, 40)
         };
 
 
@@ -86,7 +93,7 @@
           "");
 
         meso.marker.addListener('click', function() {
-          window.open("popup_meso.html", "MsgWindow", "width = 400", "height = 400");
+          window.open("popup_mesoamerica.html", "MsgWindow", "width = 400", "height = 400");
         });
 
         var india = new Civilization(
@@ -111,8 +118,6 @@
         this.window = window;
       }
     </script>
-
-
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
