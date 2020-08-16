@@ -17,7 +17,7 @@ body {font-family: "Lato", sans-serif}
 
   <!-- Automatic Slideshow Images -->
   <div class="mySlides w3-display-container w3-center">
-    <img src="https://www.ancient.eu/img/c/p/1200x627/1416.jpg?v=1485680501" style="width:60%">
+    <img src="https://www.ancient.eu/img/c/p/1200x627/1416.jpg?v=1485680501" style="width:90%">
     <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
       <h3>Aztec calendar</h3>
       <p><b>The famous Aztec sun stone or calendar stone, full of intricate glyphs and motifs illustrating important aspects of Aztec beliefs - warfare, astronomy, gods. </b></p>    
@@ -46,7 +46,8 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-justify">Mesoamerica refers to a collection of ancient civilizations that shared similar cultural traits within a region spanning what is now modern day Mexico, Guatemala, Honduras, Belize, El Salvador, Nicaragua, and Costa Rica. Such civilizations include the Olmecs, Maya, Zaptec and more. Mesoamerican civilizations shared diverse geographical terrain and spoken languages. They developed advanced cyclical calendars and are credited with pioneering the concept of zero. The Mayan written language is the first written language to use signs and letters to communicate syllables which can be combined into words. Mesoamerican civilizations are known for practicing ritual bloodletting and human sacrifices. 
 <p></p><br>
 
-  
+<button onclick="goToWiki()">More information :)</button><br><br>
+
 <!-- End Page Content -->
 </div>
 
@@ -67,7 +68,15 @@ function carousel() {
   setTimeout(carousel, 4000);    
 }
 
-
+var myWindow;
+        
+        function goToWiki() {
+          window.open("https://en.wikipedia.org/wiki/Mesoamerica");
+        }
+        
+        function closeWin() {
+          myWindow.close();
+        }
 </script>
 
 </body>
